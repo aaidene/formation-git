@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Commands</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        h3 {
+            color: #1E90FF;
+        }
+
+        pre {
+            background-color: #F0F0F0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-weight: bold;
+            color: gray;
+        }
+
+
+        span.git-command {
+            color: #008000;
+            font-weight: bold;
+        }
+
+        span.git-comment {
+            color: grey;
+            font-weight: bold;
+        }
+    </style>
+
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="container-fluid">
+        <h1>Principe commande git</h1>
+
+        <div class="row">
+            <div class="col-4 border border-success ">
+                <h1>1.Les premier commit</h1>
+
+            <h3><b>git init</b> : Initialiser un nouveau dépôt Git</h3>
+                <pre>
+                        <code class="git-command">
+        
+                 <span class="git-command"><span>git init</span> <span class="git-comment"># Initialiser un nouveau dépôt Git</span></span></span>
+                        </code>
+                        </pre>
+                
+               
+
+                <h3><b>status </b>emvérifier l'état du versioning</h3>
+                <p></p>
+                <pre>
+        <code class="git-command">
+        <span class="git-command">git status  # Vérifier l'état du versioning</span>
+        </code>
+        </pre>
+
+                <h3><b>Add:</b>staging : Sélectionner les fichiers pour le prochain commit</h3>
+                <pre>
+        <code class="git-command">
+        <span class="git-command"><span >git add fichier</span>  <span class="git-comment"># Ajouter un fichier spécifique au staging</span></span></span>
+        <span class="git-command"><span>git add <dossier></span> <span class="git-comment"> # Ajouter tous les fichiers d'un dossier au staging</span></span></span>
+        <span class="git-command"><span>git add *.html</span>  <span class="git-comment"># Ajouter tous les fichiers HTML au staging</span></span></span>
+        <span class="git-command"><span>git add --all</span>  <span class="git-comment"># Ajouter tous les fichiers (ajouts et suppressions) au staging</span></span></span>
+        <span class="git-command"><span>git add *</span>  <span class="git-comment"># Ajouter tous les fichiers (ajouts et suppressions) au staging</span></span></span>
+        </code>
+        </pre>
+
+                <h3><b>commit:</b>effectuer le premier commit</h3>
+                <pre>
+        <code class="git-command">
+        <span class="git-command"><span>git commit</span>  # <span class="git-comment"># Ouvrir un éditeur pour rédiger le message du commit</span></span></span>
+        <span class="git-command"><span>git commit -m "Message pour le commit ^^"</span>  # <span class="git-comment">Utiliser le drapeau -m pour spécifier directement le message du commit</span></span></span>
+        </code>
+        </pre>
+
+                <h3><b>log</b>consulter l'historique des commits</h3>
+                <pre>
+            <code class="git-command">
+            <span class="git-command"><span >git log</span>  <span class="git-comment"># Récupère et affiche les derniers commits</span></span></span>
+            <span class="git-command"><span">git log --oneline</span> <span class="git-comment"># Afficher l'historique avec une ligne par commit (plus lisible)</span></span></span>
+            <span class="git-command"><span >git log -n <nombre></span>  <span class="git-comment"># Afficher un nombre spécifié de commits</span></span></span>
+            <span class="git-command"><span>git log -p <fichier></span>  <span class="git-comment"># Afficher l'historique des commits affectant un fichier en particulier</span></span></span>
+            <span class="git-command"><span >git log --author <motif></span>  <span class="git-comment"># Afficher l'historique par rapport au nom de l'auteur</span></span></span>
+            </code>
+            </pre>
+
+                <h3><b>diff:</b>Voir les différences sur un fichier</h3>
+                <pre>
+            <code class="git-command">
+            <span class="git-command"><span >git diff</span> <span class="git-comment"># Afficher toutes les différences depuis le dernier commit</span></span></span>
+            <span class="git-command"><span>git diff <fichier></span>   <span class="git-comment"># Afficher les différences pour un fichier spécifique</span></span></span>
+            <span class="git-command"><span>git diff --cached</span>  <span class="git-comment"># Afficher les différences par rapport à ce qui est en staging</span></span></span>
+            <span class="git-command"><span>git diff <commit></span>  <span class="git-comment"># Comparer l'état actuel au commit spécifié</span></span></span>
+            <span class="git-command"><span>git diff <commit>..<commit></span>   <span class="git-comment"># Comparer les fichiers entre deux commits</span></span></span>
+            </code>
+            </pre>
+            </div>
+            <div class="col-4 border border-success ">
+                <h3><b>checkout:</b> Passer de branche en branche ou revenir sur un fichier ou un commit</h3>
+                <pre>
+                <code class="git-command">
+                    <span class="git-command"><span >git checkout <fichier></span></span> <span class="git-comment"># Transformer le fichier comme il était lors du commit et l'ajouter au staging</span>
+                    <span class="git-command"><span >git checkout <commit></span></span>  <span class="git-comment"># Transformer tous les fichiers pour reproduire l'état du commit. brMet le HEAD dans un état détaché (detached HEAD)</span>
+                </code>
+            </pre>
+
+                <h3><b>revert:</b> Inverser un commit</h3>
+                <pre>
+                <code class="git-command">
+                    <span class="git-command"><span >git revert <commit></span></span>  <span class="git-comment"> # Inverser un commit en créant un nouveau commit d'inversion</span>
+                </code>
+            </pre>
+
+                <h3><b>reset:</b> Altérer l'historique et la zone de staging</h3>
+                <pre>
+                <code class="git-command">
+                    <span class="git-command"><span >git reset fichier></span> <span class="git-comment"># Supprimer un fichier de la zone de staging sans supprimer les modifications</span>
+                    <span class="git-command"><span >git reset</span></span>   <span class="git-comment"># Supprimer tous les fichiers de la zone de staging sans supprimer les modifications</span>
+                    <span class="git-command"><span >git reset --hard</span></span> <span class="git-comment"># Réinitialiser le dossier de travail au dernier commit. Toutes les modifications non commit seront perdues</span>
+                    <span class="git-command"><span >git reset <commit></span></span>  <span class="git-comment"># Revenir en arrière jusqu'au commit. Réinitialise la zone de staging tout en laissant le dossier de travail inchangé. L'historique sera perdu</span>
+                    <span class="git-command"><span >git reset <commit> --hard</span></span>   <span class="git-comment"># Revenir au commit et réinitialiser la zone de staging et le dossier de travail pour correspondre. Toutes les modifications et les commits après le commit seront supprimés</span>
+                </code>
+            </pre>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    </div>
+
+
+</html>
